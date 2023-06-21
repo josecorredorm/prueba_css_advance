@@ -1,0 +1,243 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    /* background-color: #fff; */
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "navbar"
+    "select-menu"
+    "sales"
+    "paginacion"
+    "footer";
+    grid-template-rows: 1fr 1fr 5fr 0.5fr 0.75fr;
+}
+.navbar{
+    grid-area: navbar;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+.navbar__option{
+    display: none;
+}
+.navbar__logo{
+    display: flex;
+    align-items: center;
+}
+.navbar__logo_logo{
+    width: 80%;
+}
+.navbar__logo_logo img{
+    width: 2rem;
+    padding: 5px;
+    transition: 2s;
+}
+.navbar__logo_logo img:hover{
+    rotate: -45deg;
+    translate: 25px;
+}
+.navbar__logo__letter{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.navbar__logo__letter_title1{
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+.navbar__logo__letter_title2{
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 5px;
+    font-style: italic;
+}
+.select-menu{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-evenly;
+    grid-area: select-menu;
+}
+.sales{
+    grid-area: sales;
+    height: 65vh;
+    padding-right: 10%;
+    padding-left: 10%;
+    overflow-y: auto;
+    gap: 15px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 10px;
+    gap: 20px; 
+}
+.main__card{
+    width: 70%;
+    height: 330px;
+    /* border: 1px inset #ccd8bc; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+
+
+
+
+
+
+.main__card__img{
+    width: 90%;
+    filter: grayscale(100%);
+        transition: filter 0.5s ease;
+}
+.main__card__img:hover {
+    filter: grayscale(0%);
+    transition: filter 0.5s ease;
+}
+.main__card__title{
+    font-weight: bold;
+    margin: 5px 0px;
+}
+.main__card__description{
+    margin: 10px 0px;
+    font-weight: 200;
+}
+.main__card__button{
+    width: 80px;
+    height: 40px;
+}
+.paginacion{
+    padding-top: 5px;
+    width: 100%;
+    height: 40px;
+}
+.paginacion ul{
+    text-align: center;
+    list-style: none;
+    
+}
+.paginacion ul li{
+    display: inline-block;
+    width: 30px;
+}
+.paginacion ul li a{
+    display: block;
+    padding: 5px 5px;
+    color: #000;
+    text-decoration: none;
+    border: 1px solid #a0a0a0;
+}
+.footer{
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #333333;
+}
+@media (min-width: 576px){
+    .container{
+        grid-template-areas: 
+        "navbar select-menu"
+        "navbar sales"
+        "footer paginacion";
+        grid-template-columns: 2fr 10fr;
+        grid-template-rows: 1fr 8fr 1fr;
+    }
+    .navbar{
+        background-color: #666666;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+        padding-top: 50px;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+    .navbar__menu{
+        display: none;
+    }
+    .navbar__option{
+        color: #fff;
+        display: contents;
+    }
+    .navbar__option ul{
+        list-style: none;
+    }
+    .navbar__option ul li p{
+        padding-top: 5px;
+    }
+    .navbar__logo{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .navbar__logo_logo{
+        width: 100px;
+    }
+    .navbar__logo_logo img{
+        width: 4rem;
+        padding: 5px;
+    }
+    .navbar__logo__letter{
+        justify-content: center;
+    }
+    .navbar__logo__letter_title1{
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+    .navbar__logo__letter_title2{
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 5px;
+        font-style: italic;
+    }
+    .sales{
+        grid-area: sales;
+        height: auto;
+        overflow-y: scroll;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    .main__card{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content:center;
+    }
+    .main__card:hover{
+        box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+    }
+    .main__card__img{
+        width: 80%;
+        height: auto;
+        filter: grayscale(100%);
+        transition: filter 0.5s ease;
+    }
+    .main__card__img:hover {
+        filter: grayscale(0%);
+        transition: filter 0.5s ease;
+        
+    }
+}
