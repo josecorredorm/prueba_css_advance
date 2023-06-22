@@ -31,6 +31,7 @@
 .navbar__logo{
     display: flex;
     align-items: center;
+    justify-content: flex-start;
 }
 .navbar__logo_logo{
     width: 80%;
@@ -42,7 +43,7 @@
 }
 .navbar__logo_logo img:hover{
     rotate: -45deg;
-    translate: 25px;
+    translate: 60%;
 }
 .navbar__logo__letter{
     width: 100%;
@@ -68,18 +69,20 @@
     justify-content: space-evenly;
     grid-area: select-menu;
 }
+.select_menu_option{
+    width: 80%;
+}
 .sales{
     grid-area: sales;
-    height: 65vh;
+    height: 57vh;
     padding-right: 10%;
     padding-left: 10%;
     overflow-y: auto;
-    gap: 15px;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    margin-top: 10px;
+    margin: 20px 0px;
     gap: 20px; 
 }
 .main__card{
@@ -91,12 +94,6 @@
     align-items: center;
     justify-content:center;
 }
-
-
-
-
-
-
 .main__card__img{
     width: 90%;
     filter: grayscale(100%);
@@ -124,6 +121,7 @@
     height: 40px;
 }
 .paginacion ul{
+    padding-top: 10px;
     text-align: center;
     list-style: none;
     
@@ -139,13 +137,23 @@
     text-decoration: none;
     border: 1px solid #a0a0a0;
 }
+.paginacion ul li:hover{
+    background-color:#46543c;
+    
+}
 .footer{
     grid-area: footer;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    background-color: #333333;
+    background-color: #46543c;
+}
+.footer p{
+    font-size: 12px;
+}
+.footer div i{
+    color: #fff;
 }
 @media (min-width: 576px){
     .container{
@@ -157,10 +165,10 @@
         grid-template-rows: 1fr 8fr 1fr;
     }
     .navbar{
-        background-color: #666666;
+        background-color: #8d9484;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: start;
         gap: 20px;
         padding-top: 50px;
@@ -173,18 +181,41 @@
     .navbar__option{
         color: #fff;
         display: contents;
+
     }
     .navbar__option ul{
         list-style: none;
+        width: 100%;
     }
-    .navbar__option ul li p{
-        padding-top: 5px;
+    .navbar__option ul li{
+        padding: 10px 5px;
+        transition: 0.5s;
+    }
+    .navbar__option ul li a{
+        text-decoration: none;
+        color: #fff;
+    }
+    .navbar__option ul li a span{
+        font-size: 15px;
+    }
+    .navbar__option ul li:hover{
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+        background-color: #004133;
+        border-radius: 5px;
+    }
+    .navbar__option ul li:hover{
+        color:  #000;
+        font-size: 15px;
+    }
+    .navbar__option ul li a i{
+        padding-right: 5%;
     }
     .navbar__logo{
         width: 100%;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content:flex-start;
         flex-wrap: wrap;
     }
     .navbar__logo_logo{
@@ -215,17 +246,18 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr;
+        gap: 5px;
     }
     .main__card{
         width: 100%;
-        height: 100%;
+        height: 95%;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content:center;
     }
     .main__card:hover{
-        box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 10px 10px -10px #004133;
         -webkit-transform: scale(1.05);
         transform: scale(1.05);
     }
@@ -238,6 +270,10 @@
     .main__card__img:hover {
         filter: grayscale(0%);
         transition: filter 0.5s ease;
-        
+    }
+    .footer p{
+        font-weight: 200;
+        font-size: 12px;
+        color: #fff;
     }
 }
