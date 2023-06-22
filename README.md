@@ -1,0 +1,1 @@
+<!-- Maqueta de pagina modelo para dos vistas, mobile y desktop, la maqueta no tiene funcionabilidad, solo se emplean utilidades de media queries, grid y flex, con animaciones. -->
